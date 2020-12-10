@@ -3,15 +3,7 @@ import { nanoid } from 'nanoid';
 import Todo from './components/Todo';
 import FilterButton from './components/FilterButton';
 import Form from './components/Form';
-
-// put this custom hook on it's own file
-const usePrevious = value => {
-  const ref = useRef();
-  useEffect(() => {
-    ref.current = value;
-  });
-  return ref.current;
-};
+import usePrevious from './hooks/usePrevious';
 
 const FILTER_MAP = {
   All: () => true,
