@@ -9,11 +9,4 @@ const DATA = [
   { id: 'todo-2', name: 'Sleep', completed: false },
 ];
 
-ReactDOM.render(<App tasks={DATA} />, document.getElementById('root'));
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+ReactDOM.render(<App />, document.getElementById('root'));

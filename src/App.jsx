@@ -4,6 +4,7 @@ import Todo from './components/Todo';
 import FilterButton from './components/FilterButton';
 import Form from './components/Form';
 import usePrevious from './hooks/usePrevious';
+import useLocalStorageState from './hooks/useLocalStorageState';
 
 const FILTER_MAP = {
   All: () => true,
@@ -12,8 +13,8 @@ const FILTER_MAP = {
 };
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
-const App = props => {
-  const [tasks, setTasks] = useState(props.tasks);
+const App = () => {
+  const [tasks, setTasks] = useLocalStorageState('yart-todos');
   const [filter, setFilter] = useState('All');
 
   const toggleTaskCompleted = id => {
